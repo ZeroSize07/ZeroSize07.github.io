@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gijdıllağ Elmirə</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-color 0.5s;
+            position: relative; /* Pozisyon ayarı eklendi */
+        }
+
+        html, body {
+        height: 100%; /* Sayfanın tüm yüksekliğini kapsar */
+        margin: 0;
+        overflow-x: hidden; /* Yatay kaydırmayı engeller */
+        }
+
+        body {
+        overflow-y: auto; /* Düşey kaydırmayı etkinleştirir */
+        }
+
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .image-gallery img {
+            flex: 1 1 calc(50% - 20px); /* Flexbox ile uyumlu hizalama */
+            max-width: calc(50% - 20px);
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid #00aaff;
+        }
+
+        .message {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 10px 0; /* Mesajlar arasında boşluk */
+        }
+
+        .message::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #00aaff;
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .image-gallery img {
+                max-height: 300px; /* Mobilde maksimum yüksekliği sınırla */
+                max-width: 100%; /* Genişliği otomatik ayarla */
+            }
+
+            .message {
+                font-size: 1.5em;
+            }
+        }
+
+        .neon-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #0f0; /* Yeşil neon rengi */
+            text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0, 0 0 60px #0f0, 0 0 70px #0f0;
+            display: none; /* Varsayılan olarak gizli */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container hidden" id="main-content">
+        <div class="image-gallery">
+            <img src="Johnny Sins.jpg" alt="Şık Resim 1">
+            <img src="Miaaaa.jpg" alt="Şık Resim 2">
+        </div>
+        <div class="message">BİTTİMİ YEĞEN?</div>
+        <br>
+        <div class="message">Sayt sahibinə BİTTİ YEĞEN yaz GİJDILLAĞ</div>
+    </div>
+    <div class="neon-text" id="neon-text">HARBİ BİTTİ YEĞEN</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targetDate = new Date('2024-08-30');
+            const today = new Date();
+            const mainContent = document.getElementById('main-content');
+            const neonText = document.getElementById('neon-text');
+
+            if (today.toDateString() === targetDate.toDateString()) {
+                document.body.style.background = '#fff'; /* Arka plan beyaz */
+                mainContent.classList.add('hidden');
+                neonText.classList.remove('hidden');
+                neonText.style.display = 'block'; /* Neon metni görünür yap */
+            } else {
+                document.body.style.background = 'linear-gradient(to right, #f8f9fa, #e9ecef)';
+                mainContent.classList.remove('hidden');
+                neonText.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

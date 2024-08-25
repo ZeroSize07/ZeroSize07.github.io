@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğum Günün Kutlu Olsun!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(to right, #00aaff, #003366);
+            text-align: center;
+            overflow-x: hidden; /* Yatay kaydırmayı engellemek için */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border: 2px solid #00aaff;
+            text-shadow: 0 0 10px #00aaff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00aaff;
+            animation: neon 1.5s infinite alternate;
+        }
+
+        .neon {
+            color: #00aaff;
+            text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+        }
+
+        .warning {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #ff4444;
+            text-shadow: 0 0 10px #ff4444;
+        }
+
+        .birthday-image, .car-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .car-images {
+            margin: 20px 0;
+        }
+
+        .car-images img:first-of-type {
+            transform: scaleX(-1); /* Soldaki resmi yatay eksende tersine çevirir */
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 1.5em;
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .confetti-item {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00aaff;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: confetti-fall linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            from {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes neon {
+            from {
+                text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+            }
+            to {
+                text-shadow: 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff, 0 0 50px #00aaff;
+            }
+        }
+
+        .open-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #00aaff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            font-size: 1.5em;
+            cursor: pointer;
+            animation: blink 1s infinite;
+            z-index: 10000;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                background-color: #00aaff;
+            }
+            50% {
+                background-color: #003366;
+            }
+        }
+
+        .new-site {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+        }
+
+        .new-site img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #00aaff;
+        }
+
+        .new-site p {
+            font-size: 1.5em;
+            color: #fff;
+            margin-top: 20px;
+            text-shadow: 0 0 10px #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="neon">AD GÜNÜN MÜBARƏK QARDAŞIM</h1>
+            <h1 class="neon">ELMİR</h1> 
+        </header>
+        <main>
+            <p class="warning">SİQARET İÇMƏ ƏƏ</p>
+            <img src="elmirMaladoy.png" alt="Doğum Günü Fotoğrafı" class="birthday-image">
+            <div class="car-images">
+                <img src="BMWW.jpg" alt="BMW 39">
+                <img src="BMWW.jpg" alt="Diğer Araba">
+            </div>
+            <p>AD gününü Təbrik eliyirəm Ürəyim neçə belə illərə çıxasan, sadəcə ilə çıxasan da yozmuya.
+                3 4 gün vaxtım var idi ancağ bunu hazırlaya bildim sağ üstttəki düymədə səni surpiriz gözdüyür.
+            </p>
+            <div>
+                <h1>İPUCU</h1>
+                <p>ŞİFRƏ SƏNİ SEVƏNLƏR ÜÇÜN ƏN ÖNƏMLİ TARİX Dİ</p>
+                <p>TƏK BAXARSAN IHM</p>
+            </div>
+        </main>
+        <footer>
+            <p>Şu anki yıl: <span id="year"></span></p>
+        </footer>
+    </div>
+
+    <button class="open-button" onclick="handleButtonClick()">➡️</button>
+
+    <div class="confetti"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function generateConfetti() {
+                const confettiContainer = document.querySelector('.confetti');
+
+                for (let i = 0; i < 200; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti-item');
+                    confetti.style.backgroundColor = getRandomColor();
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.top = `${Math.random() * 100}vh`;
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                    confettiContainer.appendChild(confetti);
+                }
+            }
+
+            generateConfetti();
+
+            const yearSpan = document.getElementById('year');
+            yearSpan.textContent = new Date().getFullYear();
+        });
+
+        function getRandomColor() {
+            const colors = ['#00aaff', '#003366', '#0066cc', '#3399ff', '#66ccff'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function handleButtonClick() {
+            window.location.href = 'password.html';
+        }
+    </script>
+</body>
+</html>
