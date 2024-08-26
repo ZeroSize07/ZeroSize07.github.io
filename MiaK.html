@@ -21,15 +21,14 @@
         }
 
         html, body {
-        height: 100%; /* Sayfanın tüm yüksekliğini kapsar */
-        margin: 0;
-        overflow-x: hidden; /* Yatay kaydırmayı engeller */
+            height: 100%; /* Sayfanın tüm yüksekliğini kapsar */
+            margin: 0;
+            overflow-x: hidden; /* Yatay kaydırmayı engeller */
         }
 
         body {
-        overflow-y: auto; /* Düşey kaydırmayı etkinleştirir */
+            overflow-y: auto; /* Düşey kaydırmayı etkinleştirir */
         }
-
 
         .container {
             position: relative;
@@ -60,6 +59,7 @@
             object-fit: cover;
             border-radius: 10px;
             border: 5px solid #00aaff;
+            cursor: pointer; /* Tıklanabilirlik göstergesi */
         }
 
         .message {
@@ -113,14 +113,18 @@
 <body>
     <div class="container hidden" id="main-content">
         <div class="image-gallery">
-            <img src="Johnny Sins.jpg" alt="Şık Resim 1">
-            <img src="Miaaaa.jpg" alt="Şık Resim 2">
+            <img src="Johnny Sins.jpg" alt="Şık Resim 1" id="image1">
+            <img src="Miaaaa.jpg" alt="Şık Resim 2" id="image2">
         </div>
         <div class="message">BİTTİMİ YEĞEN?</div>
         <br>
         <div class="message">Sayt sahibinə BİTTİ YEĞEN yaz GİJDILLAĞ</div>
     </div>
     <div class="neon-text" id="neon-text">HARBİ BİTTİ YEĞEN</div>
+    
+    <!-- MP3 Dosyaları -->
+    <audio id="audio1" src="ElmirJo .mp3" preload="auto"></audio>
+    <audio id="audio2" src="elmir.mp3" preload="auto"></audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -128,6 +132,10 @@
             const today = new Date();
             const mainContent = document.getElementById('main-content');
             const neonText = document.getElementById('neon-text');
+            const audio1 = document.getElementById('audio1');
+            const audio2 = document.getElementById('audio2');
+            const image1 = document.getElementById('image1');
+            const image2 = document.getElementById('image2');
 
             if (today.toDateString() === targetDate.toDateString()) {
                 document.body.style.background = '#fff'; /* Arka plan beyaz */
@@ -139,6 +147,14 @@
                 mainContent.classList.remove('hidden');
                 neonText.classList.add('hidden');
             }
+
+            image1.addEventListener('click', function() {
+                audio1.play();
+            });
+
+            image2.addEventListener('click', function() {
+                audio2.play();
+            });
         });
     </script>
 </body>
